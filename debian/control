@@ -1,0 +1,47 @@
+Source: node-vinyl
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Sruthi Chandran <srud@disroot.org>
+Build-Depends: debhelper-compat (= 13)
+ , mocha <!nocheck>
+ , node-debbundle-es-to-primitive <!nocheck>
+ , node-clone <!nocheck>
+ , node-clone-buffer <!nocheck>
+ , node-clone-stats <!nocheck>
+ , node-cloneable-readable <!nocheck>
+ , node-has <!nocheck>
+ , node-mississippi <!nocheck>
+ , node-object-inspect <!nocheck>
+ , node-remove-trailing-separator <!nocheck>
+ , node-replace-ext <!nocheck>
+ , node-tmatch <!nocheck>
+ , node-bufferstreams <!nocheck>
+ , dh-sequence-nodejs
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-vinyl
+Vcs-Git: https://salsa.debian.org/js-team/node-vinyl.git
+Homepage: https://github.com/gulpjs/vinyl
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
+
+Package: node-vinyl
+Architecture: all
+Depends: ${misc:Depends}
+ , node-clone
+ , node-clone-buffer
+ , node-clone-stats
+ , node-cloneable-readable
+ , node-remove-trailing-separator
+ , node-replace-ext
+ , node-bufferstreams
+Provides: ${nodejs:Provides}
+Description: Virtual file format
+ Vinyl is a very simple metadata object that describes a file. When you think
+ of a file, two attributes come to mind: `path` and `contents`. These are the
+ main attributes on a Vinyl object. A file does not necessarily represent
+ something on your computer’s file system. You have files on S3, FTP, Dropbox,
+ Box, CloudThingly.io and other services. Vinyl can be used to describe files
+ from all of these sources.
+ .
+ Node.js is an event-based server-side JavaScript engine.

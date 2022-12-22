@@ -1,0 +1,18 @@
+version=4
+opts=\
+dversionmangle=auto,\
+filenamemangle=s%(?:.*?/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%@PACKAGE@-$1% \
+ https://github.com/gulpjs/vinyl/tags (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@ group
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts=searchmode=plain,component=types-vinyl,ctype=nodejs,pgpmode=none,\
+ filenamemangle=s%(?:.*?/)?vinyl[-]?(@ANY_VERSION@@ARCHIVE_EXT@)%node-types-vinyl-$1% \
+ https://registry.npmjs.org/@types/vinyl https://registry.npmjs.org/@types/vinyl/-/vinyl-@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+opts=\
+component=vinyl-bufferstream,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(@ANY_VERSION@@ARCHIVE_EXT@)/node-vinyl-bufferstream-$1/ \
+ https://github.com/shinnn/vinyl-bufferstream/tags .*/archive.*/v?@ANY_VERSION@@ARCHIVE_EXT@ checksum
